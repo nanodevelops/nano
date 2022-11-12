@@ -1,0 +1,111 @@
+/* SETTING CUSTOM STYLING FOR THE MAIN PAGE */
+
+/* COLOR AND FONT PROPERTIES */
+:root{
+    --clr-primary-100: #dc2f2f;
+    --clr-primary-200: #9cd3d3;
+    --clr-primary-300: #FF6347;
+
+    --ff-primary: 'Rubik', sans-serif;
+    --ff-secondary: 'Nimbus Sans Becker PBla', sans-serif;
+    --ff-accent: 'FreeSans', sans-serif;
+}
+
+/* MAIN BODY */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: var(--ff-accent);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.875rem;
+    color: #fff;
+    background-color: var(--clr-primary-200);
+}
+
+a{
+    text-decoration: none;
+    color: var(--clr-primary-100);
+    font-family: var(--ff-secondary);
+    font-size: 2.4em;
+    display: inline-block;
+}
+a:hover{
+    color: var(--clr-primary-300);
+    cursor: pointer;
+}
+
+
+.container{
+    width: 80%;
+    max-width: 315px;
+    margin: 0 auto;
+}
+.header--container{
+    margin-top: 0.8em;
+}
+#header-nav-bar{
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+#menu-bar{
+    position: relative;
+    align-self: center;
+    justify-self: end;
+}
+#menu-bar .menu__items{
+    display: none;
+}
+#menu-bar .menu__items.active__menu{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    text-align: center;
+
+
+    color: var(--clr-secondary-100);
+    background-color: var(--clr-primary-100);
+    text-transform: uppercase;
+
+    font-family: var(--ff-secondary);
+    font-size: .8rem;
+
+
+    padding: 0 50px 0 50px;
+    cursor: pointer;
+    transform: translateX(-.5em);
+    transition: transform 100ms ease-in-out;
+}
+#menu-bar .menu__block{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 0.5em;
+    align-self: center;
+}
+#menu-bar .menu__block .bar{
+    width: 1.8em;
+    height: 0.15em;
+    background-color: var(--clr-primary-100);
+    transition: 0.5s;
+}
+#menu-bar .menu__block .bar:nth-child(1){
+    transform: translateY(-0.025em);
+}
+#menu-bar .menu__block.active .bar:nth-child(1){
+    width: 1.8em;
+    transform: translateY(0px) rotate(45deg);
+    transition-delay: 0.125s;
+}
+#menu-bar .menu__block .bar:nth-child(2){
+    transform: translateY(-0.025em);
+}
+#menu-bar .menu__block.active .bar:nth-child(2){
+    width: 0.8em;
+    transform: translateY(0px) rotate(315deg);
+    transition-delay: 0.25s;
+}
+#menu-bar .menu__block.active .bar:nth-child(3){
+    transform: translateX(0.125em);
+}
